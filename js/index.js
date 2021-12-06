@@ -39,9 +39,11 @@ function renderBooks() {
 
 		bookDiv.innerHTML = `
 	<h2 class="card__title">${book.title}</h2>
-	<p>${book.author}</p>
-	<p>${book.pages}</p>
-	<p>Has Been Read: ${book.hasBeenRead ? "Yes" : "No"}</p>`;
+	<p class="card__author">${book.author}</p>
+	<div class="bottom-container">
+		<p class="card__pages">Pages: ${book.pages}</p>
+		<p class="card__read-info">Read: ${book.hasBeenRead ? "Yes" : "No"}</p>
+	</div>`;
 
 		library.appendChild(bookDiv);
 	}

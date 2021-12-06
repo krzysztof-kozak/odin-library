@@ -33,6 +33,7 @@ body {
 }
 
 .card {
+	display: grid;
 	padding: 0.5em;
 	box-shadow: 0 0 2px 1px hsl(0deg 3% 93%);
 	border-radius: 0.25em;
@@ -42,4 +43,20 @@ body {
 
 .card:hover {
 	background-color: hsl(225deg 4% 20% / 25%);
+}
+
+.card__title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: hsl(217deg 89% 76%);
+	margin-bottom: 0.25em;
+}
+
+.card__author {
+	color: hsl(0deg 0% 100% / 43%);
+	margin-bottom: 0.75em;
+}
+
+.bottom-container {
+	margin-top: auto;
 }
