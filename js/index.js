@@ -1,7 +1,7 @@
 const myLibrary = [];
 
 function Book(title, author, pages, hasBeenRead) {
-	this.tite = title;
+	this.title = title;
 	this.author = author;
 	this.pages = pages;
 	this.hasBeenRead = hasBeenRead;
@@ -31,7 +31,7 @@ addBookToLibrary(book4);
 const library = document.querySelector(".library");
 
 function renderBooks() {
-	for (const book in myLibrary) {
+	for (const book of myLibrary) {
 		const bookDiv = document.createElement("div");
 
 		bookDiv.classList.add("card");
