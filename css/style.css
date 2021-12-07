@@ -116,6 +116,7 @@ body {
 
 .form {
 	display: grid;
+	position: relative;
 	max-width: 800px;
 	grid-template-rows: 50px repeat(4, 1fr) 50px;
 	row-gap: 1.5em;
@@ -124,6 +125,35 @@ body {
 	padding: 1em;
 	background-color: hsl(0deg 0% 5% / 75%);
 	box-shadow: 0 0 4px 2px #000;
+}
+
+.form__close-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	border: 1px solid white;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.close-icon {
+	position: absolute;
+	height: 150%;
+	transform-origin: center;
+	z-index: -1;
+}
+
+.icon-left {
+	left: 5px;
+	border-right: 5px solid #da100f;
+	transform: rotate(-45deg) translateX(9px);
+}
+.icon-right {
+	right: 5px;
+	border-left: 5px solid #da100f;
+	transform: rotate(45deg) translateX(-9px);
 }
 
 .card p {

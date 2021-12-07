@@ -1,9 +1,11 @@
 const library = document.querySelector(".library");
 const newBookBtn = document.querySelector(".new-book");
 const form = document.querySelector(".form");
+const formCloseBtn = document.querySelector(".form__close-btn");
 
 newBookBtn.addEventListener("click", showForm);
 form.addEventListener("submit", submitNewBook);
+formCloseBtn.addEventListener("click", closeForm);
 
 let myLibrary = [];
 
@@ -126,6 +128,10 @@ function renderBook(book) {
 
 function showForm() {
 	form.classList.add("form-animation");
+}
+
+function closeForm() {
+	form.classList.remove("form-animation");
 }
 
 function submitNewBook(e) {
