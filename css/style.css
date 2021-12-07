@@ -77,7 +77,7 @@ body {
 
 .card__remove-btn {
 	background-color: hsl(240deg 3% 7%);
-	color: hsla(0deg 86% 46%);
+	color: hsl(217deg 100% 91%);
 	padding: 0.25em 0.75em;
 	border-radius: 0.15em;
 	cursor: pointer;
