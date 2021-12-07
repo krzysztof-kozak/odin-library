@@ -22,6 +22,64 @@
 			</header>
 
 			<section class="library"></section>
+
+			<form class="form">
+				<h2 class="form__title">Add New Book</h2>
+
+				<div class="form-layout-controll">
+					<label class="form__label" for="title">Title</label>
+					<input
+						class="form__input"
+						type="text"
+						id="title"
+						name="title"
+						required
+						aria-required="true"
+					/>
+				</div>
+
+				<div class="form-layout-controll">
+					<label class="form__label" for="author">Author</label>
+					<input
+						class="form__input"
+						type="text"
+						id="author"
+						name="author"
+						required
+						aria-required="true"
+					/>
+				</div>
+
+				<div class="form-layout-controll">
+					<label class="form__label" for="pages">Pages</label>
+					<input
+						class="form__input"
+						type="number"
+						id="ages"
+						name="pages"
+						required
+						aria-required="true"
+					/>
+				</div>
+
+				<div class="form-layout-controll">
+					<label class="form__label" for="pet-select">Read:</label>
+
+					<select
+						class="form__select"
+						name="read-status"
+						id="read-status"
+						required
+						aria-required="true"
+					>
+						<option value=""></option>
+						<option value="Yes">Yes</option>
+						<option value="No">No</option>
+					</select>
+				</div>
+
+				<button class="form__button" type="submit">Add Book</button>
+			</form>
 		</main>
 	</body>
 </html>

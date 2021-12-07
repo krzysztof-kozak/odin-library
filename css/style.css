@@ -61,3 +61,57 @@ body {
 .bottom-container {
 	margin-top: auto;
 }
+
+.form {
+	display: grid;
+	max-width: 800px;
+	grid-template-rows: 50px repeat(4, 1fr) 50px;
+	row-gap: 1.5em;
+	font-family: "Open Sans", sans-serif;
+	margin: 5em auto;
+	padding: 1em;
+	background-color: hsl(0deg 0% 5% / 75%);
+	box-shadow: 0 0 4px 2px #000;
+}
+
+.form__title {
+	place-self: center;
+	font-size: 1.5rem;
+	color: hsla(0, 86%, 46%, 0.749);
+	text-transform: uppercase;
+}
+
+.form__input,
+.form__select {
+	border: 1px solid hsl(0deg 0% 100% / 10%);
+	background-color: #313235;
+	padding: 0.25em;
+}
+
+.form__input:focus-visible {
+	border-color: hsl(217deg 89% 76%);
+}
+
+.form__button {
+	border: 1px solid #313235;
+	text-align: center;
+	background-color: hsla(0, 86%, 46%, 0.749);
+	box-shadow: 0 0 1px 1px hsl(0, 0%, 0%);
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.form__button:hover {
+	background-color: hsla(0deg 86% 46%);
+}
+
+.form__button:active {
+	border-style: inset;
+	box-shadow: inset 0 0 1px 1px hsl(0deg 0% 0%);
+}
+
+.form-layout-controll {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25em;
+}
