@@ -5,7 +5,7 @@ const form = document.querySelector(".form");
 newBookBtn.addEventListener("click", showForm);
 form.addEventListener("submit", submitNewBook);
 
-const myLibrary = [];
+let myLibrary = [];
 
 let id = 0;
 function Book(title, author, pages, hasBeenRead) {
@@ -78,9 +78,13 @@ function renderBooks() {
 	}
 
 	const readInfoElements = document.querySelectorAll(".card__read-info");
+	const removeBtns = document.querySelectorAll(".card__remove-btn");
+
 	readInfoElements.forEach((element) =>
 		element.addEventListener("change", handleReadStatusChange)
 	);
+
+	removeBtns.forEach((element) => element.addEventListener("click", handleBookRemoval));
 }
 
 function renderBook(book) {
@@ -112,8 +116,12 @@ function renderBook(book) {
 	</div>`;
 
 	library.appendChild(bookDiv);
+
 	const readInfo = bookDiv.querySelector(".card__read-info");
 	readInfo.addEventListener("change", handleReadStatusChange);
+
+	const removeBtn = bookDiv.querySelector(".card__remove-btn");
+	removeBtn.addEventListener("click", handleBookRemoval);
 }
 
 function showForm() {
@@ -159,6 +167,24 @@ function updateBookStatus(newStatus, bookId) {
 			return;
 		}
 	}
+}
+
+function handleBookRemoval({ target }) {
+	let bookCard = target.parentNode;
+
+	while (!bookCard.classList.contains("card")) {
+		bookCard = bookCard.parentNode;
+	}
+
+	const bookId = parseInt(bookCard.dataset["id"], 10);
+	removeBook(bookId);
+}
+
+function removeBook(bookId) {
+	myLibrary = myLibrary.filter((book) => book.id !== bookId);
+
+	const bookDomNode = document.querySelector(`[data-id="${bookId}"]`);
+	bookDomNode.remove();
 }
 
 // Show books from our pre-populated library;
