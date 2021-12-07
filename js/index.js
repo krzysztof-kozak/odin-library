@@ -7,11 +7,17 @@ form.addEventListener("submit", submitNewBook);
 
 const myLibrary = [];
 
+let id = 0;
 function Book(title, author, pages, hasBeenRead) {
 	this.title = title;
 	this.author = author;
 	this.pages = pages;
 	this.hasBeenRead = hasBeenRead;
+
+	this.assignUniqueId = function () {
+		this.id = id;
+		id += 1;
+	};
 }
 
 function addBookToLibrary(book) {
@@ -34,12 +40,18 @@ addBookToLibrary(book2);
 addBookToLibrary(book3);
 addBookToLibrary(book4);
 
+book1.assignUniqueId();
+book2.assignUniqueId();
+book3.assignUniqueId();
+book4.assignUniqueId();
+
 function renderBooks() {
 	for (const book of myLibrary) {
 		const bookDiv = document.createElement("div");
 
 		bookDiv.classList.add("card");
 		bookDiv.setAttribute("aria-roledescription", "book card");
+		bookDiv.setAttribute("data-id", book.id);
 
 		bookDiv.innerHTML = `
 	<h2 class="card__title">${book.title}</h2>
@@ -61,6 +73,11 @@ function renderBooks() {
 
 		library.appendChild(bookDiv);
 	}
+
+	const readInfoElements = document.querySelectorAll(".card__read-info");
+	readInfoElements.forEach((element) =>
+		element.addEventListener("change", handleReadStatusChange)
+	);
 }
 
 function renderBook(book) {
@@ -88,6 +105,8 @@ function renderBook(book) {
 	</div>`;
 
 	library.appendChild(bookDiv);
+	const readInfo = bookDiv.querySelector(".card__read-info");
+	readInfo.addEventListener("change", handleReadStatusChange);
 }
 
 function showForm() {
@@ -110,6 +129,23 @@ function submitNewBook(e) {
 	renderBook(newBook);
 
 	form.reset();
+}
+
+function handleReadStatusChange({ target }) {
+	const bookCard = target.parentNode.parentNode;
+	const bookId = parseInt(bookCard.dataset["id"], 10);
+
+	const newStatus = target.value;
+	updateBookStatus(newStatus, bookId);
+}
+
+function updateBookStatus(newStatus, bookId) {
+	for (const book of myLibrary) {
+		if (book.id === bookId) {
+			book.hasBeenRead = newStatus === "Yes" ? true : false;
+			return;
+		}
+	}
 }
 
 // Show books from our pre-populated library;
