@@ -85,6 +85,14 @@ body {
 	align-self: flex-end;
 }
 
+.card__remove-btn:hover {
+	background-color: hsl(0deg 0% 16%);
+}
+
+.card__remove-btn:active {
+	box-shadow: 0 0 1px 1px hsl(217deg 3% 38%) inset;
+}
+
 .new-book {
 	font-family: "Open Sans";
 	display: block;
