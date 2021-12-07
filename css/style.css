@@ -62,8 +62,9 @@ body {
 }
 
 .card__read-info {
-	background-color: #53637f;
+	background-color: hsl(223deg 5% 26%);
 	padding: 0.05em 0.25em;
+	text-align: center;
 }
 
 .bottom-container {
