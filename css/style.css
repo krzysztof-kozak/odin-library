@@ -61,6 +61,11 @@ body {
 	margin-bottom: 0.75em;
 }
 
+.card__read-info {
+	background-color: #53637f;
+	padding: 0.05em 0.25em;
+}
+
 .bottom-container {
 	margin-top: auto;
 }
@@ -96,6 +101,10 @@ body {
 	padding: 1em;
 	background-color: hsl(0deg 0% 5% / 75%);
 	box-shadow: 0 0 4px 2px #000;
+}
+
+.card p {
+	padding: 0.25em 0;
 }
 
 .form__title {

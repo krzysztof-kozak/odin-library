@@ -46,7 +46,17 @@ function renderBooks() {
 	<p class="card__author">${book.author}</p>
 	<div class="bottom-container">
 		<p class="card__pages">Pages: ${book.pages}</p>
-		<p class="card__read-info">Read: ${book.hasBeenRead ? "Yes" : "No"}</p>
+		<label for="read-info">Read:</label>
+						<select
+							class="card__read-info"
+							name="read-info"
+							id="read-info"
+							required
+							aria-required="true"
+						>
+							<option value="Yes" ${book.hasBeenRead ? "selected" : ""}>Yes</option>
+							<option value="No" ${book.hasBeenRead ? "" : "selected"}>No</option>
+						</select>
 	</div>`;
 
 		library.appendChild(bookDiv);
@@ -64,7 +74,17 @@ function renderBook(book) {
 	<p class="card__author">${book.author}</p>
 	<div class="bottom-container">
 		<p class="card__pages">Pages: ${book.pages}</p>
-		<p class="card__read-info">Read: ${book.hasBeenRead ? "Yes" : "No"}</p>
+		<label for="read-info">Read:</label>
+		<select
+			class="card__read-info"
+			name="read-info"
+			id="read-info"
+			required
+			aria-required="true"
+		>
+			<option value="Yes" ${book.hasBeenRead ? "selected" : ""}>Yes</option>
+			<option value="No" ${book.hasBeenRead ? "" : "selected"}>No</option>
+		</select>
 	</div>`;
 
 	library.appendChild(bookDiv);
