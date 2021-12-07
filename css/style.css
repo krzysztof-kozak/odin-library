@@ -37,7 +37,7 @@ body {
 
 .card {
 	display: grid;
-	padding: 0.5em;
+	padding: 1.5em;
 	box-shadow: 0 0 2px 1px hsl(0deg 3% 93%);
 	border-radius: 0.25em;
 	background-color: hsl(225deg 4% 20%);
