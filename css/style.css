@@ -37,6 +37,7 @@ body {
 
 .card {
 	display: grid;
+	grid-template-rows: repeat(3, 1fr);
 	padding: 1.5em;
 	box-shadow: 0 0 2px 1px hsl(0deg 3% 93%);
 	border-radius: 0.25em;
@@ -54,6 +55,7 @@ body {
 	color: hsl(217deg 89% 76%);
 	margin-bottom: 0.25em;
 	border-bottom: 1px solid hsl(230deg 3% 45%);
+	align-self: end;
 }
 
 .card__author {
