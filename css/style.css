@@ -69,6 +69,18 @@ body {
 
 .bottom-container {
 	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.card__remove-btn {
+	background-color: hsl(240deg 3% 7%);
+	color: hsla(0deg 86% 46%);
+	padding: 0.25em 0.75em;
+	border-radius: 0.15em;
+	cursor: pointer;
+	box-shadow: 0 0 1px 1px hsl(217deg 3% 38%);
+	align-self: flex-end;
 }
 
 .new-book {
