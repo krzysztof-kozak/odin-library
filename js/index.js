@@ -49,4 +49,12 @@ function renderBooks() {
 	}
 }
 
+const newBookBtn = document.querySelector(".new-book");
+const form = document.querySelector(".form");
+newBookBtn.addEventListener("click", showForm);
+
+function showForm() {
+	form.classList.add("form-animation");
+}
+
 renderBooks();
