@@ -85,6 +85,7 @@ function renderBook(book) {
 
 	bookDiv.classList.add("card");
 	bookDiv.setAttribute("aria-roledescription", "book card");
+	bookDiv.setAttribute("data-id", book.id);
 
 	bookDiv.innerHTML = `
 	<h2 class="card__title">${book.title}</h2>
@@ -121,9 +122,10 @@ function submitNewBook(e) {
 	const title = formData.get("title");
 	const author = formData.get("author");
 	const pages = formData.get("pages");
-	const readStatus = formData.get("read-status");
+	const readStatus = formData.get("read-status") === "Yes" ? true : false;
 
 	const newBook = new Book(title, author, pages, readStatus);
+	newBook.assignUniqueId();
 
 	addBookToLibrary(newBook);
 	renderBook(newBook);
