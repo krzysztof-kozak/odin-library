@@ -57,6 +57,7 @@ function renderBooks() {
 	<h2 class="card__title">${book.title}</h2>
 	<p class="card__author">${book.author}</p>
 	<div class="bottom-container">
+	<div>
 		<p class="card__pages">Pages: ${book.pages}</p>
 		<label for="read-info">Read:</label>
 						<select
@@ -69,6 +70,7 @@ function renderBooks() {
 							<option value="Yes" ${book.hasBeenRead ? "selected" : ""}>Yes</option>
 							<option value="No" ${book.hasBeenRead ? "" : "selected"}>No</option>
 						</select>
+						</div>
 	</div>`;
 
 		library.appendChild(bookDiv);
@@ -134,7 +136,12 @@ function submitNewBook(e) {
 }
 
 function handleReadStatusChange({ target }) {
-	const bookCard = target.parentNode.parentNode;
+	let bookCard = target.parentNode;
+
+	while (!bookCard.classList.contains("card")) {
+		bookCard = bookCard.parentNode;
+	}
+
 	const bookId = parseInt(bookCard.dataset["id"], 10);
 
 	const newStatus = target.value;
