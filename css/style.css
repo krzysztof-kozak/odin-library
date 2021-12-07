@@ -112,7 +112,8 @@ body {
 	padding: 0.25em;
 }
 
-.form__input:focus-visible {
+.form__input:focus-visible,
+.form__select:focus-visible {
 	border-color: hsl(217deg 89% 76%);
 }
 
