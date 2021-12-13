@@ -10,16 +10,18 @@ formCloseBtn.addEventListener("click", closeForm);
 let myLibrary = [];
 
 let id = 0;
-function Book(title, author, pages, hasBeenRead) {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.hasBeenRead = hasBeenRead;
+class Book {
+	constructor(title, author, pages, hasBeenRead) {
+		this.title = title;
+		this.author = author;
+		this.pages = pages;
+		this.hasBeenRead = hasBeenRead;
+	}
 
-	this.assignUniqueId = function () {
+	assignUniqueId() {
 		this.id = id;
 		id += 1;
-	};
+	}
 }
 
 function addBookToLibrary(book) {
